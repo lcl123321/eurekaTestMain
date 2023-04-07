@@ -9,7 +9,6 @@
         <module>euraka-client-2</module>
         <module>euraka-server</module>
         <module>euraka-server01</module>
-        <module>springcloud-gateway</module>
     </modules>
 
     <parent>
