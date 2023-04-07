@@ -1,0 +1,2 @@
+2023-04-07 22:47:33-[INFO:]-(com.lcl.eurakaclient1.EurakaClient1Application:19) 启动成功
+2023-04-07 22:47:47-[INFO:]-(com.lcl.eurakaclient1.controller.UserController:29) 根据ID从数据库中找用户

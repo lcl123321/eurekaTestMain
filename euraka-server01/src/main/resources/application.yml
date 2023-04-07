@@ -1,0 +1,24 @@
+# 应用名称
+spring:
+  application:
+    name: euraka-server01
+
+server:
+  port: 8762
+
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+  client:
+    #register-with-eureka: false
+    #fetch-registry: false
+    service-url:
+      #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      #注册到8761节点，互相注册
+      defaultZone: http://localhost:8761/eureka/
+  server:
+    enable-self-preservation: false
+    #设置清理的间隔时间，而后这个时间使用的是毫秒单位（默认是60秒）
+    eviction-interval-timer-in-ms: 5000
+

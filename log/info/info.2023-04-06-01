@@ -1,0 +1,5 @@
+2023-04-06 01:36:55-[INFO:]-(com.lcl.eurakaclient1.EurakaClient1Application:19) 启动成功
+2023-04-06 01:37:08-[INFO:]-(com.lcl.eurakaclient1.controller.UserController:25) 根据ID从数据库中找用户
+2023-04-06 01:37:35-[INFO:]-(com.lcl.eurakaclient1.EurakaClient1Application:19) 启动成功
+2023-04-06 01:54:05-[INFO:]-(com.lcl.eurakaclient1.controller.UserController:25) 根据ID从数据库中找用户
+2023-04-06 01:54:12-[INFO:]-(com.lcl.eurakaclient1.controller.UserController:25) 根据ID从数据库中找用户

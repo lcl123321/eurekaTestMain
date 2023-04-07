@@ -1,0 +1,28 @@
+# 应用名称
+spring:
+  application:
+    name: euraka-server
+
+server:
+  port: 8761
+
+eureka:
+  instance:
+    #eureka服务端的实例名称，告诉Eureka它正运行在那个主机上,可以是IP、也可以是服务器上hosts文件中的别名
+    hostname: localhost
+    prefer-ip-address: true
+  client:
+    #false表示不向注册中心注册自己，默认为true
+    #register-with-eureka: false
+    #false表示自己端就是注册中心，我的职责就是维护实例，并不需要去检索服务，默认为true
+    #fetch-registry: false
+    #设置与eureka server交互的地址，查询服务和注册服务都需要依赖这个地址
+    service-url:
+      #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      #将当前注册中心注册到第二个注册中心节点上，在集群情况下会使用
+      defaultZone: http://localhost:8762/eureka/
+  server:
+    # 测试时关闭自我保护机制，保证不可用服务及时踢出
+    enable-self-preservation: false
+    #设置清理的间隔时间，而后这个时间使用的是毫秒单位（默认是60秒）
+    eviction-interval-timer-in-ms: 5000
