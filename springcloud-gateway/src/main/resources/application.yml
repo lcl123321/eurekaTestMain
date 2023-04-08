@@ -1,0 +1,36 @@
+server:
+  port: 8087
+
+
+spring:
+  application:
+    name: gateway # 服务名称
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: provide8083
+          uri: lb://cloudprovideservice
+          predicates:
+            - Path=/provide/**
+          filters:
+            #            - 转发做拼接，去掉provide后缀，uri/** 而不是 uri/provide/**
+            - StripPrefix=1
+        #            与之对于的还有 PrefixPath=/Huterox
+        #  当访问 http://localhost:8762/aaa，加上前缀就变成 http://localhost:8762/Huterox/aaa
+        - id: HelloServer
+          uri: http://localhost:9901
+          predicates:
+            - Path=/user/**
+
+eureka:
+  #  将ip配置到eureka里面，不给就是host名会配置到那个里面
+  #  instance:
+  #    prefer-ip-address: true
+  client:
+    service-url:  # eureka的地址信息
+      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/
+
+

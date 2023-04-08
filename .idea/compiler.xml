@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="euraka-server01" />
+        <module name="springcloud-gateway" />
         <module name="euraka-client-2" />
         <module name="springcloud_ServiceConsumer01" />
         <module name="euraka-client-1" />
@@ -16,7 +17,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="springcloud-gateway" target="1.8" />
       <module name="springcloud_ServiceConsumer01" target="1.8" />
       <module name="springcloud_zuul_gateway" target="1.8" />
     </bytecodeTargetLevel>

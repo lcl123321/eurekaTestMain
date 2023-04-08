@@ -9,6 +9,7 @@
         <module>euraka-client-2</module>
         <module>euraka-server</module>
         <module>euraka-server01</module>
+        <module>springcloud-gateway</module>
     </modules>
 
     <parent>
@@ -27,8 +28,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-<!--        <spring-cloud.version>2021.0.4</spring-cloud.version>-->
-        <spring-cloud.version>Hoxton.SR12</spring-cloud.version>
+        <spring-cloud-ailibaba.version>2.2.5.RELEASE</spring-cloud-ailibaba.version>
+        <spring-cloud.version>Hoxton.SR10</spring-cloud.version>
     </properties>
 
     <dependencies>
