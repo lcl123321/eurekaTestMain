@@ -17,10 +17,11 @@ eureka:
     #false表示自己端就是注册中心，我的职责就是维护实例，并不需要去检索服务，默认为true
     #fetch-registry: false
     #设置与eureka server交互的地址，查询服务和注册服务都需要依赖这个地址
-    service-url:
+    #service-url:
       #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
       #将当前注册中心注册到第二个注册中心节点上，在集群情况下会使用
-      defaultZone: http://localhost:8762/eureka/
+      #defaultZone: http://localhost:8762/eureka/
+    register-with-eureka: false
   server:
     # 测试时关闭自我保护机制，保证不可用服务及时踢出
     enable-self-preservation: false

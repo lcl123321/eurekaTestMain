@@ -16,14 +16,26 @@ spring:
           predicates:
             - Path=/provide/**
           filters:
-            #            - 转发做拼接，去掉provide后缀，uri/** 而不是 uri/provide/**
-            - StripPrefix=1
-        #            与之对于的还有 PrefixPath=/Huterox
+            # 转发做拼接，去掉provide后缀，uri/** 而不是 uri/provide/**,比如访问http://localhost:8087/view/index,
+            #若无StripPrefix过滤器时,gateway 发送请求到后台服务HelloConsumer的url就是http://HelloConsumer/view/index
+            #若有StripPrefix过滤器时，gateway会根据StripPrefix=1所配的值（这里是1）去掉URL路径中的部分前缀（这里去掉一个前缀，即去掉view）
+            #发送请求到后台服务HelloConsumer的url变成http://HelloConsumer/index
+            #PrefixPath 过滤器的作用和StripPrefix正相反，是在URL路径前面添加一部分的前缀,若PrefixPath=/Huterox，则访问的是http://HelloConsumer/Huterox/view/index
+            - StripPrefix=1 # 过滤器，会去除第一级路径然后进行路由
+        #            与之对于的还有 PrefixPath=/Huterox ,即表示加上前缀
         #  当访问 http://localhost:8762/aaa，加上前缀就变成 http://localhost:8762/Huterox/aaa
         - id: HelloServer
           uri: http://localhost:9901
           predicates:
             - Path=/user/**
+        - id: HelloConsumer
+          uri: lb://HelloConsumer
+          predicates: #断言工厂，对请求url进行判断，只有断言判断为真（匹配路径），才能走下一步（过滤器）
+            - Path=/consumerview/**
+          filters: #过滤，对断言判断为真的url进行过滤处理，比如添加前缀，去除前缀
+            - StripPrefix=1 #使用去除一级前缀，访问远程服务的 /view/index 需要使用 /view/view/index路径
+            #自定义过滤器
+            - MyParam=name
 
 eureka:
   #  将ip配置到eureka里面，不给就是host名会配置到那个里面
@@ -31,6 +43,5 @@ eureka:
   #    prefer-ip-address: true
   client:
     service-url:  # eureka的地址信息
-      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/
-
+      defaultZone: http://localhost:8761/eureka/ #,http://localhost:8762/eureka/
 

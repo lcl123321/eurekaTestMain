@@ -7,6 +7,7 @@ package com.lcl.cloudconsumer.feignService;/*
 
 import com.lcl.cloudconsumer.entity.User;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -16,4 +17,7 @@ import java.util.Map;
 public interface UserClientService {
     @RequestMapping("/user/getUserById")
     Map getUserById(@RequestParam("id") Integer id);//注意，参数列表与服务提供方尽量一致，使用@RequestParam
+
+    @RequestMapping("/user/getUserBean")
+    Map getUserBeanAtFeign(@RequestBody User user);
 }

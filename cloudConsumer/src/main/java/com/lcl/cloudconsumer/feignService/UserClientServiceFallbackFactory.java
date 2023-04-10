@@ -4,6 +4,7 @@ package com.lcl.cloudconsumer.feignService;/*
  *@author: lcl
  *@Time: 2023/4/6  12:51
  */
+import com.lcl.cloudconsumer.entity.User;
 import org.springframework.stereotype.Component;
 import java.util.HashMap;
 import java.util.Map;
@@ -16,6 +17,13 @@ public class UserClientServiceFallbackFactory implements UserClientService{
         HashMap<String,Object> map = new HashMap<>();
         map.put("msg","未找到Id为"+id+"的结果");
         map.put("user",null);
+        return map;
+    }
+
+    @Override
+    public Map getUserBeanAtFeign(User user){
+        HashMap<String,Object> map = new HashMap<>();
+        map.put("msg","没有正确返回");
         return map;
     }
 }

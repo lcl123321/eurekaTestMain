@@ -1,0 +1,16 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: redis-service
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${server.port} #指定服务在euraka中显示的微服务名为:应用名
+      # 心跳检测检测与续约时间
+      # 测试时将值设置设置小些，保证服务关闭后注册中心能及时踢出服务
+    lease-renewal-interval-in-seconds: 2 #2秒发心跳
+    lease-expiration-duration-in-seconds: 5 #5s提走

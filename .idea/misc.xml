@@ -11,6 +11,7 @@
         <option value="$PROJECT_DIR$/euraka-server01/pom.xml" />
         <option value="$PROJECT_DIR$/euraka-client-2/pom.xml" />
         <option value="$PROJECT_DIR$/springcloud-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-redis/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

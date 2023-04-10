@@ -14,6 +14,7 @@
         <module name="euraka-client-1" />
         <module name="cloudConsumer" />
         <module name="euraka-server" />
+        <module name="spring-redis" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -29,6 +30,7 @@
       <module name="euraka-server" options="-parameters" />
       <module name="euraka-server01" options="-parameters" />
       <module name="eurekaTestMain" options="" />
+      <module name="spring-redis" options="-parameters" />
       <module name="springcloud-gateway" options="-parameters" />
       <module name="springcloud_ServiceConsumer01" options="-parameters" />
       <module name="springcloud_zuul_gateway" options="-parameters" />

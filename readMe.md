@@ -1,4 +1,10 @@
-
+eureka-server 8761
+eureka-server01 8762
+eureka-client-1 9001
+eureka-client-2 9002
+cloudConsumer 9903
+springcloud-gateway 8087
+spring-redis 8088
 
 
 

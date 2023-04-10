@@ -1,2 +1,5 @@
-2023-04-08 10:43:07-[INFO:]-(com.lcl.eurakaclient1.EurakaClient1Application:19) 启动成功
-2023-04-08 10:51:07-[INFO:]-(com.lcl.eurakaclient1.controller.UserController:29) 根据ID从数据库中找用户
+2023-04-11 02:01:56-[INFO:]-(com.lcl.eurakaclient1.EurakaClient1Application:19) 启动成功
+2023-04-11 02:06:19-[INFO:]-(com.lcl.eurakaclient1.EurakaClient1Application:19) 启动成功
+2023-04-11 02:21:14-[INFO:]-(com.lcl.eurakaclient1.EurakaClient1Application:19) 启动成功
+2023-04-11 02:25:44-[INFO:]-(com.lcl.eurakaclient1.controller.UserController:44) 进入了getUserBean
+2023-04-11 02:26:02-[INFO:]-(com.lcl.eurakaclient1.controller.UserController:44) 进入了getUserBean
